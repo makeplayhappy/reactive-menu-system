@@ -11,6 +11,7 @@ public class IntValueChangerTrigger : MonoBehaviour
 
     public bool incrementor = true;
     public int amount = 1;
+    public ParticleSystem fxOnEnter;
     void OnTriggerEnter(Collider other)
     {
         #if UNITY_EDITOR
@@ -18,7 +19,12 @@ public class IntValueChangerTrigger : MonoBehaviour
         #endif
         int addon = (incrementor)? amount : -amount;
         
-        intVariable.Value += addon;  
+        intVariable.Value += addon;
+        if( fxOnEnter != null){
+            fxOnEnter.Play();
+        }
+
+
     }
 
 }

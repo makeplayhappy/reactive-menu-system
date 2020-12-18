@@ -43,8 +43,8 @@ Changes an integer value when entered. Used for the coin pickup and the fire dam
 ###### Scripts/ProjectEnums.cs
 The enums for the game states
 
-###### Scripts/GlobalManagerSO.cs
-This is the definition for the Global Manager Scriptable Object which lives outside the scene. Once written you need an instance in the project (ScriptableObjects/GlobalManager.asset). This handles opening the shop menu when it detects a game state change and monitors player health and shows the gameover menu.
+###### Scripts/GameStateManager.cs
+This is the global game state manager / watcher, it reacts to changes in the gamesatte Unity Atom, handles opening the shop menu when it detects a game state change and monitors player health and shows the gameover menu. The game state enum Unity Atom allows communication from the prefab menus and scene. 
 
 
 ## Atoms
@@ -56,10 +56,6 @@ Other Atoms are standard base atoms, player health and coins collected. There is
 ## Menu Manager & Menu Prefabs
 The menu system requires a class and prefab naming scheme to be followed and the MenuManager needs to be added to every scene. 
 ![Menu Manager](Docs/menu-manager.png)
-
-
-## Game Manager Scriptable Object
-The scriptable object subscribes to the changes to the Global game state atom. This allows communication from the prefab menus and scene. 
 
 
 # Assets used links

@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WrestleWorld.unity
+    guid: 01d3e8fc6bb1f47e8b71c17ec1e1e4d8
   m_configObjects: {}

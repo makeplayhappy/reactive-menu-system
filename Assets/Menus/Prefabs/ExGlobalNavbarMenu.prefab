@@ -330,6 +330,7 @@ MonoBehaviour:
   healthBar: {fileID: 2879818589880153298}
   MaxHealth: {fileID: 11400000, guid: 1d5957c04267f404bbd4ed5df9dc72bf, type: 2}
   HealthChangedEvent: {fileID: 11400000, guid: e84707683dcc144f9875949ad0175651, type: 2}
+  startSizeDelta: {x: 0, y: 0}
 --- !u!1 &2879818589880153299
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +342,6 @@ GameObject:
   - component: {fileID: 2879818589880153298}
   - component: {fileID: 2879818589880153296}
   - component: {fileID: 2879818589880153297}
-  - component: {fileID: 2879818589880153303}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -405,18 +405,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2879818589880153303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2879818589880153299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8262ad2bda5044349631e8da3fcc9ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2879818590105001908
 GameObject:
   m_ObjectHideFlags: 0

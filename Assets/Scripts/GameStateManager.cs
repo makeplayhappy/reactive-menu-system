@@ -6,11 +6,8 @@ using UnityEngine.SceneManagement;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 
-//this is the data that gets serialised from midi files
-[CreateAssetMenu(fileName = "new GlobalManager", menuName = "ScriptableObjects/GlobalManager", order = 1)]
-    //probably badly named! this is the level / scene (a single atom of progression)
-
-public class GlobalManagerSO : ScriptableObject{
+//The global Game State Manager
+public class GameStateManager : MonoBehaviour{
 
     [SerializeField]   
     private IntEvent HealthChangedEvent;
@@ -24,23 +21,23 @@ public class GlobalManagerSO : ScriptableObject{
     private void GameStateChange(GameState newState){
         switch(newState){
             case GameState.GamePlay:
-                Debug.Log("GlobalManagerSO GamePlay");
+                Debug.Log("GameStateManager GamePlay");
 
             break;
             case GameState.MainMenu:
-                Debug.Log("GlobalManagerSO MainMenu");
+                Debug.Log("GameStateManager MainMenu");
 
 
             break;
 
             case GameState.Shopping:
-                Debug.Log("GlobalManagerSO Shopping");
+                Debug.Log("GameStateManager Shopping");
                 ExShopMenu.Show();
 
             break;
 
             case GameState.PlayerDead:
-                Debug.Log(">>> GlobalManagerSO PlayerDead");
+                Debug.Log("GameStateManager PlayerDead");
                 ExGameOverMenu.Show();
 
             break;
@@ -50,7 +47,7 @@ public class GlobalManagerSO : ScriptableObject{
     }
 
     private void PlayerHealthChanged(int health){
-        Debug.Log($"GlobalManagerSO heard player health is {health}");
+        Debug.Log($"GameStateManager heard player health is {health}");
         if(health <= 0){
             GlobalGameState.Value = GameState.PlayerDead;
 
@@ -60,28 +57,15 @@ public class GlobalManagerSO : ScriptableObject{
     void Awake(){
         GlobalGameStateChangedEvent.Register(this.GameStateChange);
         HealthChangedEvent.Register(this.PlayerHealthChanged);
-        Debug.Log("GlobalManagerSO Awake");
+        Debug.Log("GameStateManager Awake");
         
-    }
-
-    void OnEnable(){
-        GlobalGameStateChangedEvent.Register(this.GameStateChange);
-        HealthChangedEvent.Register(this.PlayerHealthChanged);
-        Debug.Log("GlobalManagerSO Alive");
-
     }
 
     void OnDestroy(){
         GlobalGameStateChangedEvent.Unregister(this.GameStateChange);
         HealthChangedEvent.Unregister(this.PlayerHealthChanged);
-        Debug.Log("GlobalManagerSO OnDestroy");
+        Debug.Log("GameStateManager OnDestroy");
     }
-    void OnDisable(){
-        GlobalGameStateChangedEvent.Unregister(this.GameStateChange);
-        HealthChangedEvent.Unregister(this.PlayerHealthChanged);
-        Debug.Log("GlobalManagerSO OnDisable");
-    }
-
 
  
 }

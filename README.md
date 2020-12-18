@@ -30,16 +30,16 @@ Trigger colliders which update integer atoms.
 ![Physics Setup](Docs/physics-view.png)
 
 ## Scripts 
-######Scripts/GameStateTrigger.cs
+###### Scripts/GameStateTrigger.cs
 Changes game state when triggered - used here on the Shop entrance.
 
-######Scripts/IntValueChangerTrigger.cs
+###### Scripts/IntValueChangerTrigger.cs
 Changes an integer value when entered. Used for the coin pickup and the fire damage.
 
-######Scripts/ProjectEnums.cs
+###### Scripts/ProjectEnums.cs
 The enums for the game states
 
-######Scripts/GlobalManagerSO.cs
+###### Scripts/GlobalManagerSO.cs
 This is the definition for the Global Manager Scriptable Object which lives outside the scene. Once written you need an instance in the project (ScriptableObjects/GlobalManager.asset). This handles opening the shop menu when it detects a game state change and monitors player health and shows the gameover menu.
 
 
